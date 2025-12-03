@@ -2,10 +2,10 @@ import Producto from "../clases/Producto.js";
 
 
 const productos = [
-    new Producto("Espada corta","img/espada_corta.png",950,"comun","arma",5),
-    new Producto("Escudo de madera","img/escudo_madera.png",800,"comun","armadura",3),
-    new Producto("Pocion de vida","img/pocion_vida.png",500,"comun","consumible",20),
-    new Producto("Arco largo","img/arco_largo.png",1500,"raro","arma",10),
+    new Producto("Espada corta","./style/imgs/espada_corta.png",950,"comun","arma",5),
+    new Producto("Escudo de madera","./style/imgs/escudo_madera.png",800,"comun","armadura",3),
+    new Producto("Pocion de vida","./style/imgs/pocion_vida.png",500,"comun","consumible",20),
+    new Producto("Arco largo","./style/imgs/arco_largo.png",1500,"raro","arma",10),
 ];
 
 /**
