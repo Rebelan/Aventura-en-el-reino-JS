@@ -39,6 +39,7 @@ button{
     border: 2px solid var(--color-accent-gold);
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease;
+    font-size: 1rem;
 }
 
 button:hover{
@@ -53,7 +54,8 @@ button:hover{
     align-items: center;
     justify-content: center;
     gap: 25px;
-    padding: 40px 0;
+    padding: 20px;
+    width: 100%;
 }
     .escena h1{
         margin-bottom: 16px;
@@ -113,8 +115,9 @@ button:hover{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .casillaInv {
@@ -137,7 +140,9 @@ button:hover{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    margin: 20px 0;
+    margin: 20px;
+    max-width: 1200px;
+    padding: 0 10px;
 }
 
 .producto{
@@ -163,6 +168,8 @@ button:hover{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 10px;
+    max-width: 1200px;
+    padding: 0 10px;
 }
 
 .statsJugador{
@@ -197,6 +204,9 @@ button:hover{
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
     padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .tarjeta-enemigo {
@@ -225,7 +235,8 @@ button:hover{
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin: 40px 0;
+    margin: 40px 20px;
+    flex-wrap: wrap;
 }
 
 .batalla-versus img {
@@ -269,27 +280,216 @@ button:hover{
     font-weight: bold;
 }
 
-/* --- Pantallas pequeñas: 360px --- */
-@media (max-width: 400px) {
+/* --- Pantallas pequeñas: hasta 480px (móviles) --- */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .escena {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .escena h1 {
+        font-size: 1.5rem;
+    }
 
     .tarjeta {
-        width: 90%;
+        width: 95%;
+        max-width: 280px;
+        padding: 15px;
+    }
+
+    .tarjeta img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tarjeta h2 {
+        font-size: 1.2rem;
     }
 
     .gridInventario {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 300px;
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .casillaInv img {
+        width: 40px;
+        height: 40px;
     }
 
     .gridProductos,
     .gridCesta {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        margin: 15px 10px;
     }
 
-    .listaEnemigos {
+    .producto {
+        padding: 10px;
+    }
+
+    .producto img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .producto h3 {
+        font-size: 0.9rem;
+    }
+
+    .producto p {
+        font-size: 0.85rem;
+    }
+
+    .btnProducto {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+
+    #carrito {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 8px;
+        margin: 10px;
+        padding: 0 5px;
+    }
+
+    .gridEnemigos {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 10px;
+        padding: 15px 10px;
+        margin: 0 auto;
+    }
+
+    .tarjeta-enemigo {
+        padding: 12px;
+    }
+
+    .tarjeta-enemigo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tarjeta-enemigo h3 {
+        font-size: 0.95rem;
+        margin-top: 8px;
+    }
+
+    .tarjeta-enemigo p {
+        font-size: 0.8rem;
+    }
+
+    .batalla-versus {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 15px;
+    }
+
+    .batalla-versus img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .vs-text {
+        font-size: 2rem;
+    }
+
+    .mensaje-resultado {
+        font-size: 1.1rem;
+        margin: 10px 20px;
+    }
+
+    .final-jugador {
+        padding: 15px;
+        margin: 20px 15px;
+        width: 95%;
+    }
+
+    .final-jugador img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .final-jugador h2 {
+        font-size: 1.2rem;
+    }
+
+    .final-jugador p {
+        font-size: 0.95rem;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .inventario h3 {
+        font-size: 1rem;
+    }
+}
+
+/* --- Tamaño medio: 768px (tablets pequeñas) --- */
+@media (max-width: 768px) {
+
+    .escena {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .escena h1 {
+        font-size: 1.8rem;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 280px;
+        padding: 18px;
+    }
+
+    .tarjeta img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .gridInventario {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .casillaInv img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .gridProductos,
+    .gridCesta {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 20px 10px;
+        padding: 0 10px;
+    }
+
+    .producto img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #carrito {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 15px 10px;
+    }
+
+    .gridEnemigos {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        padding: 15px;
     }
 
     .tarjeta-enemigo img {
@@ -298,8 +498,8 @@ button:hover{
     }
 
     .batalla-versus {
-        flex-direction: column;
-        gap: 25px;
+        gap: 40px;
+        margin: 30px 15px;
     }
 
     .batalla-versus img {
@@ -308,49 +508,136 @@ button:hover{
     }
 
     .vs-text {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .final-jugador {
+        max-width: 400px;
+        margin: 30px 15px;
+    }
+
+    .final-jugador img {
+        width: 160px;
+        height: 160px;
+    }
+
+    button {
+        padding: 7px 14px;
     }
 }
 
-/* --- Tamaño medio: 720px --- */
-@media (max-width: 800px) {
+/* --- Tablets: hasta 1024px --- */
+@media (max-width: 1024px) {
+
+    .escena {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .escena h1 {
+        font-size: 2rem;
+    }
+
+    .tarjeta {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .tarjeta img {
+        width: 120px;
+        height: 120px;
+    }
 
     .gridInventario {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        max-width: 500px;
+        padding: 0 10px;
     }
 
     .gridProductos,
     .gridCesta {
         grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 20px;
+        max-width: 1000px;
     }
 
-    .listaEnemigos {
+    #carrito {
         grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 1000px;
     }
 
-    .tarjeta {
-        width: 240px;
+    .gridEnemigos {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 15px;
+        padding: 20px;
+        max-width: 1000px;
+    }
+
+    .batalla-versus {
+        gap: 50px;
+        margin: 40px 20px;
     }
 
     .batalla-versus img {
         width: 140px;
         height: 140px;
     }
+
+    .final-jugador {
+        max-width: 450px;
+        margin: 40px 20px;
+    }
+
+    .final-jugador img {
+        width: 170px;
+        height: 170px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
 }
 
-/* --- Tablets: 1024px --- */
-@media (max-width: 1100px) {
+/* --- Pantallas grandes: 1200px+ (desktop) --- */
+@media (min-width: 1200px) {
 
-    .gridInventario {
-        grid-template-columns: repeat(5, 1fr);
+    .escena {
+        padding: 40px 20px;
+        gap: 30px;
     }
 
     .gridProductos,
     .gridCesta {
         grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 30px auto;
+        max-width: 1400px;
+        padding: 0 20px;
     }
 
-    .listaEnemigos {
+    #carrito {
         grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1400px;
+        padding: 0 20px;
+    }
+
+    .gridEnemigos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+        max-width: 1400px;
+    }
+
+    .batalla-versus {
+        gap: 80px;
+    }
+
+    .batalla-versus img {
+        width: 160px;
+        height: 160px;
     }
 }
