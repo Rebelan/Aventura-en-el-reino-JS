@@ -1,0 +1,134 @@
+/* ============================================
+   ANIMACIONES GENERALES
+   ============================================ */
+
+/* Aparición suave de cada escena */
+@keyframes escenaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cada vez que una escena está visible, entra con fade */
+.escena:not(.oculta) {
+  animation: escenaFadeIn 0.5s ease-out;
+}
+
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+/* Transición suave al hacer hover / active */
+button {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+button:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+
+/* ============================================
+   TARJETAS (JUGADOR / ENEMIGOS / PRODUCTOS)
+   ============================================ */
+
+/* Tarjeta jugador: latido suave al pasar el ratón */
+.tarjeta {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Tarjetas de enemigos */
+.tarjeta-enemigo {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-enemigo:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Productos del mercado */
+.producto {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================
+   INVENTARIO
+   ============================================ */
+
+.casillaInv {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.casillaInv:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================
+   ESCENA 5 - VS ANIMADO
+   ============================================ */
+
+/* VS que late continuamente */
+@keyframes vsPulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.vs-text {
+  animation: vsPulse 1.3s ease-in-out infinite;
+}
+
+/* Mensaje de resultado con entrada suave */
+@keyframes mensajeEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensaje-resultado {
+  animation: mensajeEntrada 0.4s ease-out;
+}
