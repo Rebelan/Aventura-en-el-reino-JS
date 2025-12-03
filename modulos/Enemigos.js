@@ -3,10 +3,10 @@ import Enemigo from "../clases/Enemigo.js";
 
 // 4 enemigos normales
 export const enemigos = [
-    new Enemigo("Goblin", "../style/imgs/goblin.png", 4, 20),
-    new Enemigo("Esqueleto", "../style/imgs/esqueleto.png", 5, 25),
-    new Enemigo("Bandido", "../style/imgs/bandido.png", 6, 30),
-    new Enemigo("Lobo Oscuro", "../style/imgs/lobo.png", 7, 18),
+    new Enemigo("Goblin", "./style/imgs/goblin.png", 4, 20),
+    new Enemigo("Esqueleto", "./style/imgs/esqueleto.png", 5, 25),
+    new Enemigo("Bandido", "./style/imgs/bandido.png", 6, 30),
+    new Enemigo("Lobo Oscuro", "./style/imgs/lobo.png", 7, 18),
 ];
 
 // 1 jefe final
