@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.escena{
+    width: 100vw;
+    height: 100vh;
+}
+.oculta{
+    display:  none;
+}
+
+.tarjeta{
+    border: 2px solid #333;
+    padding: 20px;
+    width: 250px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    margin: auto;
+}
+
+.inventario {
+    margin-top: 20px;
+}
+
+.gridInventario {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    gap: 8px;
+}
+
+.casillaInv {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #444;
+    background: #eee;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.casillaInv img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.gridProductos, .gridCesta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.producto{
+    border: 2px solid #444;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.producto img{
+    width: 80px;
+    height: 80px;
+}
+
+.producto.seleccionado{
+    background: #dff6d2;
+    border-color: #4caf50;    
+}
+
+
+.btnProducto{
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.gridCesta .producto{
+    background: #eaeaea;
+}
+
+.gridEnemigos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.tarjeta-enemigo {
+    background: #333232;
+    border: 2px solid #444;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    color: white;
+}
+
+.tarjeta-enemigo:hover {
+    transform: scale(1.04);
+    border-color: gold;
+}
+
+.tarjeta-enemigo img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+
+.batalla-versus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin: 40px 0;
+}
+
+.batalla-versus img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.vs-text {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.mensaje-resultado {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 1.3rem;
+}

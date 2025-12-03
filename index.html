@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura JS</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+
+    <div id="escena1" class="escena">
+        <div id="tarjeta-jugador" class="tarjeta">
+            <img id="avatarJugador" src="./style/imgs/avatar.png" alt="Imagen correspondiente al jugador">
+
+            <h2 id="nombreJugador">Jugador</h2>
+
+            <p><strong>Vida:</strong> <span id="hpJugador">100</span></p>
+            <p><strong>Ataque:</strong> <span id="atkJugador">0</span></p>
+            <p><strong>Defensa:</strong> <span id="defJugador">0</span></p>
+            <p><strong>Puntos:</strong> <span id="puntosJugador">0</span></p>
+
+        </div>
+
+        <button id="btnMercado">Entrar a la Tienda</button>
+
+        <div class="inventario">
+            <h3>Inventario</h3>
+            <div id="inventarioCasillas" class="gridInventario"></div>
+        </div>
+    </div>
+
+
+    <div id="escena2" class="escena oculta">
+        <h1>Tienda</h1>
+
+        <div id="ListadoProductos" class="gridProductos">
+
+        </div>
+
+        <div id="carrito" class="gridCarrito">
+
+        </div>
+
+        <button id="continuar3">Continuar</button>
+
+        <div class="inventario">
+            <h3>Inventario</h3>
+            <div id="inventarioCasillas" class="gridInventario">
+                <!-- Aqui se añadiran los objetos mediante una funcion -->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="escena3" class="escena oculta">
+        <div id="tarjeta-jugador-3" class="tarjeta">
+            <img id="avatarJugador3" src="./style/imgs/avatar.png" alt="Imagen correspondiente al jugador">
+
+            <h2 id="nombreJugador3">Jugador</h2>
+
+            <p><strong>Vida:</strong> <span id="hpJugador3">100</span></p>
+            <p><strong>Ataque:</strong> <span id="atkJugador3">0</span></p>
+            <p><strong>Defensa:</strong> <span id="defJugador3">0</span></p>
+            <p><strong>Puntos:</strong> <span id="puntosJugador3">0</span></p>
+        </div>
+
+        <button id="Enemigos">Ver enemigos</button>
+
+        <div class="inventario">
+            <h3>Inventario</h3>
+            <div id="inventarioCasillas" class="gridInventario"></div>
+        </div>
+    </div>
+
+
+
+    <div id="escena4" class="escena oculta">
+        <h1>Elige tu enemigo</h1>
+
+        <div id="listaEnemigos" class="gridEnemigos">
+            <!-- Aquui añadiremos los enemigos mediante función -->
+        </div>
+    </div>
+
+
+
+    <div id="escena5" class="escena oculta">
+
+        <div class="batalla-versus">
+            <img id="avatarJugadorResultado" src="" alt="Jugador">
+            <span class="vs-text">VS</span>
+            <img id="avatarEnemigoResultado" src="" alt="Enemigo">
+        </div>
+
+        <p id="mensajeResultado" class="mensaje-resultado"></p>
+        <p id="puntosGanados" class="mensaje-resultado"></p>
+
+        <button id="volverEnemigos">Continuar</button>
+    </div>
+
+
+
+    <div id="escena6" class="escena oculta">
+        <h1>¡Has completado el juego!</h1>
+
+        <div class="final-jugador">
+            <img id="finalAvatarJugador" src="" alt="Jugador">
+            <h2 id="finalNombreJugador"></h2>
+            <p><strong>Puntos Totales:</strong> <span id="finalPuntos"></span></p>
+            <p><strong>Rango:</strong> <span id="finalRango"></span></p>
+        </div>
+
+        <p class="mensaje-final">Gracias por jugar</p>
+
+        <button id="reiniciarPartida">Reiniciar partida</button>
+
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
