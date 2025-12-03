@@ -50,6 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarEscena("escena4");
     });
 
+    function confeti(){
+        confetti({
+        particleCount: 200,
+        spread: 80,
+        startVelocity: 40,
+        origin: { y: 0.6 }
+    });
+    }
     // Botón volver tras batalla
     document.getElementById("volverEnemigos").addEventListener("click", () => {
 
@@ -59,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (resultado.ganador === "jugador" && enemigo instanceof Jefe) {
             prepararEscena6();
             mostrarEscena("escena6");
+            confeti();
             return;
         }
 

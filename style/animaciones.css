@@ -1,6 +1,4 @@
-/* ============================================
-   ANIMACIONES GENERALES
-   ============================================ */
+
 
 /* Aparición suave de cada escena */
 @keyframes escenaFadeIn {
@@ -20,9 +18,7 @@
 }
 
 
-/* ============================================
-   BOTONES
-   ============================================ */
+
 
 /* Transición suave al hacer hover / active */
 button {
@@ -44,9 +40,7 @@ button:active {
 }
 
 
-/* ============================================
-   TARJETAS (JUGADOR / ENEMIGOS / PRODUCTOS)
-   ============================================ */
+
 
 /* Tarjeta jugador: latido suave al pasar el ratón */
 .tarjeta {
@@ -79,9 +73,7 @@ button:active {
 }
 
 
-/* ============================================
-   INVENTARIO
-   ============================================ */
+
 
 .casillaInv {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -93,9 +85,7 @@ button:active {
 }
 
 
-/* ============================================
-   ESCENA 5 - VS ANIMADO
-   ============================================ */
+
 
 /* VS que late continuamente */
 @keyframes vsPulse {
