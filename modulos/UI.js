@@ -9,19 +9,43 @@ import { DistinguirJugador } from "./Ranking.js";
 
 
 // --------------------- VARIABLES GLOBALES ---------------------
+/** @type {Object|null} Referencia del objeto Jugador */
 let jugadorRef = null;
+
+/** @type {Array} Carrito temporal con productos seleccionados */
 let carritoLocal = [];
+
+/** @type {Object|null} Enemigo seleccionado actualmente */
 let enemigoActual = null;
+
+/** @type {Object|null} Resultado de la última batalla */
 let resultadoFinalBatalla = null;
 
 
 // --------------------- SET DEL JUGADOR ---------------------
+/**
+ * Establece la referencia del jugador en el módulo UI.
+ * 
+ * @param {Object} ref - Objeto del Jugador
+ * @param {string} ref.nombre - Nombre del jugador
+ * @param {string} ref.avatar - URL del avatar
+ * @param {Array} ref.inventario - Array de objetos del inventario
+ * @param {number} ref.puntos - Puntos actuales del jugador
+ */
 export function setJugador(ref) {
     jugadorRef = ref;
 }
 
 
 // --------------------- CAMBIO DE ESCENA ---------------------
+/**
+ * Oculta todas las escenas y muestra la escena especificada.
+ * 
+ * @param {string} escenaId - ID del elemento HTML de la escena a mostrar
+ * 
+ * @example
+ * mostrarEscena("escena3"); // Muestra la escena 3 y oculta las demás
+ */
 export function mostrarEscena(escenaId) {
     document.querySelectorAll(".escena").forEach(escena =>
         escena.classList.add("oculta")
@@ -31,6 +55,10 @@ export function mostrarEscena(escenaId) {
 
 
 // --------------------- PINTAR INVENTARIO ---------------------
+/**
+ * Actualiza la visualización del inventario en todas las escenas.
+ * Crea las casillas visuales con las imágenes de los objetos del inventario.
+ */
 export function fillInventario() {
 
     document.querySelectorAll("#inventarioCasillas").forEach(inv => {
@@ -47,6 +75,10 @@ export function fillInventario() {
 
 
 // --------------------- ACTUALIZAR STATS ---------------------
+/**
+ * Actualiza la visualización de las estadísticas del jugador en la escena 3.
+ * Muestra vida total, ataque, defensa y puntos.
+ */
 export function actualizarStatsJugador() {
 
     document.getElementById("hpJugador3").textContent = jugadorRef.obtenerVidaTotal();
@@ -57,6 +89,11 @@ export function actualizarStatsJugador() {
 
 
 // --------------------- PREPARAR ESCENA 2 (MERCADO) ---------------------
+/**
+ * Prepara la tienda (escena 2).
+ * Genera tarjetas de productos con un descuento aleatorio según rareza.
+ * Agrega funcionalidad para añadir/devolver productos al carrito.
+ */
 export function prepararTienda() {
 
     const contenedorProductos = document.getElementById("ListadoProductos");
@@ -119,6 +156,10 @@ export function prepararTienda() {
 
 
 // --------------------- PINTAR CARRITO ---------------------
+/**
+ * Actualiza la visualización del carrito de compras.
+ * Muestra los productos seleccionados en la escena de tienda.
+ */
 export function actualizarCarrito() {
 
     const cont = document.getElementById("carrito");
@@ -137,6 +178,11 @@ export function actualizarCarrito() {
 
 
 // --------------------- ESCENA 3 ---------------------
+/**
+ * Prepara la escena 3 (confirmación de compra).
+ * Pasa los objetos del carrito al inventario del jugador.
+ * Actualiza las estadísticas y visualización del jugador.
+ */
 export function prepararEscena3() {
 
     // Pasar objetos del carrito al jugador
@@ -152,6 +198,11 @@ export function prepararEscena3() {
 
 
 // --------------------- ESCENA 4 - LISTA DE ENEMIGOS ---------------------
+/**
+ * Prepara la escena 4 (selección de enemigos).
+ * Genera tarjetas con todos los enemigos disponibles.
+ * Al hacer clic en un enemigo, inicia el combate.
+ */
 export function prepararEscena4() {
 
     const lista = document.getElementById("listaEnemigos");
@@ -188,6 +239,11 @@ export function prepararEscena4() {
 
 
 // --------------------- ESCENA 5 - RESULTADO BATALLA ---------------------
+/**
+ * Prepara la escena 5 (resultado de la batalla).
+ * Muestra el resultado (victoria/derrota) y actualiza puntos.
+ * Elimina el enemigo vencido de la lista.
+ */
 export function prepararEscena5() {
 
     const resultado = resultadoFinalBatalla;
@@ -218,6 +274,11 @@ export function prepararEscena5() {
 
 
 // --------------------- ESCENA 6 - FINAL DEL JUEGO ---------------------
+/**
+ * Prepara la escena 6 (pantalla final).
+ * Muestra el rango final del jugador según sus puntos.
+ * Muestra estadísticas finales y mensaje de conclusión.
+ */
 export function prepararEscena6() {
 
     document.getElementById("finalAvatarJugador").src = jugadorRef.avatar;
@@ -230,7 +291,26 @@ export function prepararEscena6() {
 }
 
 
+// --------------------- CONFETI CELEBRACIÓN ---------------------
+/**
+ * Lanza efecto de confeti en pantalla para celebrar la victoria final.
+ * Utiliza la librería canvas-confetti.
+ */
+export function confetiCelebracion() {
+    confetti({
+        particleCount: 200,
+        spread: 80,
+        startVelocity: 40,
+        origin: { y: 0.6 }
+    });
+}
+
+
 // --------------------- EXPORTS NECESARIOS ---------------------
+/**
+ * Enemigo actual seleccionado en la batalla
+ * @type {Object|null}
+ */
 export {
     enemigoActual,
     resultadoFinalBatalla

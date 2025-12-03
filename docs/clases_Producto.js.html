@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: clases/Producto.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: clases/Producto.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Clase que representa un producto (objeto) disponible en la tienda.
+ * Almacena información sobre armas, armaduras y consumibles.
+ */
+class Producto{
+    /**
+     * Crea una instancia de Producto.
+     * 
+     * @param {string} nombre - Nombre del producto
+     * @param {string} imagen - URL de la imagen del producto
+     * @param {number} precio - Precio en monedas (se divide entre 100 para mostrar)
+     * @param {string} rareza - Nivel de rareza: "comun", "raro" o "epico"
+     * @param {string} tipo - Tipo de producto: "arma", "armadura" o "consumible"
+     * @param {number} bonus - Valor de bonificación que aporta el producto
+     * 
+     * @example
+     * const espada = new Producto("Espada", "./espada.png", 5000, "raro", "arma", 15);
+     */
+    constructor(nombre,imagen,precio,rareza,tipo,bonus){
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.precio = precio;
+        this.rareza = rareza;
+        this.tipo = tipo;
+        this.bonus = bonus;
+    }
+    
+    /**
+     * Formatea el precio del producto para mostrar en la UI.
+     * Convierte el precio interno a formato de moneda (ej: 950 --> 9,50C).
+     * 
+     * @returns {string} Precio formateado con símbolo de moneda
+     * 
+     * @example
+     * espada.FormatearAtributos(); // "50,00C"
+     */
+    FormatearAtributos(){
+        const precioFormateado = (this.precio / 100)
+            .toFixed(2)
+            .replace(".", ",");
+        return `${precioFormateado}C`;
+    }
+
+    /**
+     * Crea una copia del producto con el precio reducido por el descuento.
+     * No modifica el producto original.
+     * 
+     * @param {number} descuento - Porcentaje de descuento (ej: 20 para 20% de descuento)
+     * @returns {Producto} Nuevo producto clonado con precio modificado
+     * 
+     * @example
+     * const espada = new Producto("Espada", "./espada.png", 5000, "raro", "arma", 15);
+     * const espadaConDescuento = espada.AplicarDescuento(20); // Descuento del 20%
+     */
+    AplicarDescuento(descuento){
+        let copiaProducto = structuredClone(this);
+
+        copiaProducto.precio = Math.round(this.precio * (1 - descuento / 100));
+
+        return copiaProducto;
+    }
+
+
+}
+
+export default Producto;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Enemigo.html">Enemigo</a></li><li><a href="Jefe.html">Jefe</a></li><li><a href="Producto.html">Producto</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActualizarPuntos">ActualizarPuntos</a></li><li><a href="global.html#AplicarElDescuento">AplicarElDescuento</a></li><li><a href="global.html#DistinguirJugador">DistinguirJugador</a></li><li><a href="global.html#actualizarCarrito">actualizarCarrito</a></li><li><a href="global.html#actualizarStatsJugador">actualizarStatsJugador</a></li><li><a href="global.html#addObjetoInventario">addObjetoInventario</a></li><li><a href="global.html#carritoLocal">carritoLocal</a></li><li><a href="global.html#combate">combate</a></li><li><a href="global.html#confetiCelebracion">confetiCelebracion</a></li><li><a href="global.html#enemigoActual">enemigoActual</a></li><li><a href="global.html#fillInventario">fillInventario</a></li><li><a href="global.html#filtrarProductos">filtrarProductos</a></li><li><a href="global.html#jugadorRef">jugadorRef</a></li><li><a href="global.html#mostrarEscena">mostrarEscena</a></li><li><a href="global.html#obtenerAtaqueTotal">obtenerAtaqueTotal</a></li><li><a href="global.html#obtenerDefensaTotal">obtenerDefensaTotal</a></li><li><a href="global.html#obtenerVidaTotal">obtenerVidaTotal</a></li><li><a href="global.html#prepararEscena3">prepararEscena3</a></li><li><a href="global.html#prepararEscena4">prepararEscena4</a></li><li><a href="global.html#prepararEscena5">prepararEscena5</a></li><li><a href="global.html#prepararEscena6">prepararEscena6</a></li><li><a href="global.html#prepararTienda">prepararTienda</a></li><li><a href="global.html#resultadoFinalBatalla">resultadoFinalBatalla</a></li><li><a href="global.html#setJugador">setJugador</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Dec 03 2025 05:19:55 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

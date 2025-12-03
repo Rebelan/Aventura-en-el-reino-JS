@@ -1,12 +1,20 @@
+/**
+ * Clase que representa un producto (objeto) disponible en la tienda.
+ * Almacena información sobre armas, armaduras y consumibles.
+ */
 class Producto{
     /**
+     * Crea una instancia de Producto.
      * 
-     * @param {String} nombre 
-     * @param {String} imagen 
-     * @param {number} precio 
-     * @param {String} rareza 
-     * @param {String} tipo 
-     * @param {number} bonus 
+     * @param {string} nombre - Nombre del producto
+     * @param {string} imagen - URL de la imagen del producto
+     * @param {number} precio - Precio en monedas (se divide entre 100 para mostrar)
+     * @param {string} rareza - Nivel de rareza: "comun", "raro" o "epico"
+     * @param {string} tipo - Tipo de producto: "arma", "armadura" o "consumible"
+     * @param {number} bonus - Valor de bonificación que aporta el producto
+     * 
+     * @example
+     * const espada = new Producto("Espada", "./espada.png", 5000, "raro", "arma", 15);
      */
     constructor(nombre,imagen,precio,rareza,tipo,bonus){
         this.nombre = nombre;
@@ -17,10 +25,14 @@ class Producto{
         this.bonus = bonus;
     }
     
-    
     /**
-     * @param {object} producto
-     *  convierte el precio (ej: 950 --> 9,50)
+     * Formatea el precio del producto para mostrar en la UI.
+     * Convierte el precio interno a formato de moneda (ej: 950 --> 9,50C).
+     * 
+     * @returns {string} Precio formateado con símbolo de moneda
+     * 
+     * @example
+     * espada.FormatearAtributos(); // "50,00C"
      */
     FormatearAtributos(){
         const precioFormateado = (this.precio / 100)
@@ -30,10 +42,15 @@ class Producto{
     }
 
     /**
-     * @param {number} descuento
-     * Recibe un valor y devuelve una nueva copia (clon) del producto con el
-     * precio modificado
-     * @returns {object}
+     * Crea una copia del producto con el precio reducido por el descuento.
+     * No modifica el producto original.
+     * 
+     * @param {number} descuento - Porcentaje de descuento (ej: 20 para 20% de descuento)
+     * @returns {Producto} Nuevo producto clonado con precio modificado
+     * 
+     * @example
+     * const espada = new Producto("Espada", "./espada.png", 5000, "raro", "arma", 15);
+     * const espadaConDescuento = espada.AplicarDescuento(20); // Descuento del 20%
      */
     AplicarDescuento(descuento){
         let copiaProducto = structuredClone(this);
