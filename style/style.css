@@ -46,12 +46,11 @@ button:hover{
     border-color: var(--color-accent-gold-hover);
 }
 
-
-
 .escena{
     width: 100vw;
     height: 100vh;
 }
+
 .oculta{
     display:  none;
 }
@@ -90,33 +89,52 @@ button:hover{
 .casillaInv img {
     width: 50px;
     height: 50px;
+    object-fit: contain;
 }
 
 
 
 .gridProductos, .gridCesta{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .producto{
-    border: 2px solid #444;
-    padding: 10px;
-    background: #f4f4f4;
-    border-radius: 8px;
+    background: var(--color-surface-panel);
+    border: 2px solid var(--color-border-subtle);
     text-align: center;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .producto img{
     width: 80px;
     height: 80px;
+    object-fit: contain;
 }
 
 .producto.seleccionado{
-    background: #dff6d2;
-    border-color: #4caf50;    
+    background: var(--color-accent-success);
+    border-color: var(--color-accent-success);    
 }
 
+#carrito{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.statsJugador{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.statsJugador span{
+    color: var(--color-accent-gold);
+    font-weight: bold;
+}
 
 .btnProducto{
     margin-top: 10px;
