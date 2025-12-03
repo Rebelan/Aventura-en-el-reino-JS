@@ -12,7 +12,7 @@ export const enemigos = [
 // 1 jefe final
 export const jefeFinal = new Jefe(
     "Dragón Rojo",
-    "../style/imgs/dragon.png",
+    "./style/imgs/dragon.png",
     10,   // atk
     45,   // vida
     1.5   // multiAtk
