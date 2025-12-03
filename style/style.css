@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+:root {
+  --color-bg-main: #0B0A10;
+  --color-surface-card: #17141F;
+  --color-surface-panel: #221B24;
+  --color-accent-gold: #D4AF37;
+  --color-accent-gold-hover: #E3C45A;
+  --color-accent-danger: #B23A48;
+  --color-accent-success: #3BA55D;
+  --color-text-primary: #F5F1E6;
+  --color-text-secondary: #C3B9A9;
+  --color-border-subtle: #3A3140;
+
+  --font-heading: "Cinzel", serif;
+  --font-body: "Merriweather Sans", system-ui, sans-serif;
+}
+
 .escena{
     width: 100vw;
     height: 100vh;
