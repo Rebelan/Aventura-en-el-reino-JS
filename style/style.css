@@ -268,3 +268,89 @@ button:hover{
 #finalRango{
     font-weight: bold;
 }
+
+/* --- Pantallas pequeñas: 360px --- */
+@media (max-width: 400px) {
+
+    .tarjeta {
+        width: 90%;
+    }
+
+    .gridInventario {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 300px;
+    }
+
+    .gridProductos,
+    .gridCesta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .listaEnemigos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .tarjeta-enemigo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .batalla-versus {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .batalla-versus img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .vs-text {
+        font-size: 2rem;
+    }
+}
+
+/* --- Tamaño medio: 720px --- */
+@media (max-width: 800px) {
+
+    .gridInventario {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gridProductos,
+    .gridCesta {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .listaEnemigos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tarjeta {
+        width: 240px;
+    }
+
+    .batalla-versus img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* --- Tablets: 1024px --- */
+@media (max-width: 1100px) {
+
+    .gridInventario {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .gridProductos,
+    .gridCesta {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .listaEnemigos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
