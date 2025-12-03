@@ -56,14 +56,15 @@ button:hover{
 }
 
 .tarjeta{
-    border: 2px solid #333;
+    background: var(--color-surface-card);
+    border: 2px solid var(--color-border-subtle);
     padding: 20px;
-    width: 250px;
-    background: #f4f4f4;
-    border-radius: 10px;
+    width: 260px;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    transition: border-color 0.25s ease;
 }
 
 .inventario {
@@ -206,4 +207,26 @@ button:hover{
     font-size: 1.3rem;
     margin-bottom: 10px;
 
+}
+
+.final-jugador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+    background: var(--color-surface-card);
+    border: 2px solid var(--color-border-subtle);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.final-jugador img{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+#finalRango{
+    font-weight: bold;
 }
