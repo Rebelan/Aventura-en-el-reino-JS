@@ -46,6 +46,8 @@ button:hover{
     border-color: var(--color-accent-gold-hover);
 }
 
+
+
 .escena{
     width: 100vw;
     height: 100vh;
@@ -71,19 +73,18 @@ button:hover{
 
 .gridInventario {
     display: grid;
-    grid-template-columns: repeat(6, 60px);
-    gap: 8px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .casillaInv {
-    width: 60px;
-    height: 60px;
-    border: 2px solid #444;
-    background: #eee;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: var(--color-surface-panel);
+    border: 2px solid var(--color-border-subtle);
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px;
 }
 
 .casillaInv img {
