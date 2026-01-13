@@ -85,11 +85,11 @@
   animation: monederoAnimacion 1s ease;
 }
 
-/* Animación jugador entrando desde la izquierda */
+/* Animación jugador entrando desde la derecha */
 @keyframes jugadorEntrada {
   from {
-    transform: translateX(-300px);
-    opacity: 0;
+    transform: translateX(300px);
+    opacity: 1;
   }
   to {
     transform: translateX(0);
@@ -97,11 +97,11 @@
   }
 }
 
-/* Animación enemigo entrando desde la derecha */
+/* Animación enemigo entrando desde la izquierda */
 @keyframes enemigoEntrada {
   from {
-    transform: translateX(300px);
-    opacity: 0;
+    transform: translateX(-300px);
+    opacity: 1;
   }
   to {
     transform: translateX(0);
