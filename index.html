@@ -11,7 +11,13 @@
 </head>
 
 <body>
+<div id="monedas">
 
+                <img src="./style/imgs/moneda.png" id="moneda1" alt="">
+                <img src="./style/imgs/moneda.png" id="moneda2" alt="">
+                <img src="./style/imgs/moneda.png" id="moneda3" alt="">
+            
+            </div>
 
     <div id="escena1" class="escena">
         <div id="tarjeta-jugador" class="tarjeta">
@@ -23,6 +29,8 @@
             <p><strong>Ataque:</strong> <span id="atkJugador">0</span></p>
             <p><strong>Defensa:</strong> <span id="defJugador">0</span></p>
             <p><strong>Puntos:</strong> <span id="puntosJugador">0</span></p>
+
+            
 
         </div>
 
@@ -54,6 +62,7 @@
                 <!-- Aqui se añadiran los objetos mediante una funcion -->
             </div>
         </div>
+        
     </div>
 
 
@@ -105,7 +114,7 @@
 
 
 
-    <div id="escena6" class="escena oculta">
+    <div id="escena7" class="escena oculta">
         <h1>¡Has completado el juego!</h1>
 
         <div class="final-jugador">
@@ -121,6 +130,31 @@
 
     </div>
 
+    <div id="escena6" class="escena oculta">
+
+        <table>
+            <tr id="cabeza">
+                <th>Nombre</th>
+                <th>Puntos</th>
+                <th>Dinero</th>
+            </tr>
+            <tr>
+                <td>Abel</td>
+                <td>1500</td>
+                <td>255</td>
+            </tr>
+            <tr>
+                <td>Julian</td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+        </table>
+        <button id="reiniciarPartida">Reiniciar partida</button>
+    </div>
+<div id="bolsa">
+            500
+            <img src="./style/imgs/monedero.png" alt="bolsa de monedas">
+        </div>
     <script type="module" src="main.js"></script>
 </body>
 

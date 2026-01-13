@@ -20,6 +20,57 @@
   --font-body: "Merriweather Sans", system-ui, sans-serif;
 }
 
+#cabeza{
+    background-color: #3BA55D;
+    color: #F5F1E6;
+}
+
+
+#monedas img{
+    width: 100px;
+    height: 100px;
+}
+
+#moneda1{
+    margin-right: 35%;
+}
+
+#moneda2{
+    margin-right: 20%;
+}
+
+#moneda3{
+    margin-right: 15%;
+}
+
+#bolsa img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+#bolsa{
+    position: relative;
+}
+
+table{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: gray;
+    color: purple;
+   
+}
+
+th{
+    border: 3px solid rgb(255, 255, 0);
+    border-radius: 5px;
+}
+
+td{
+    color: aqua;
+    border: 2px solid black;
+}
+
 body{
     background: var(--color-bg-main);
     color: var(--color-text-primary);

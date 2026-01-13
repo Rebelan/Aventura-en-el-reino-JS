@@ -17,8 +17,36 @@
   animation: escenaFadeIn 0.5s ease-out;
 }
 
+#monedas{
+  overflow-y: hidden;
+  animation: monedas 2s ease-in-out infinite;
+}
+
+@keyframes monedas {
+  from{
+    opacity: 1;
+    transform: translateY(-300px);
+  }
+  to{
+    opacity: 0;
+    transform: translateY(400px);
+    z-index: 1;
+  }
+}
 
 
+#bolsa{
+  animation: monedero 1s ease;
+}
+
+@keyframes monedero{
+  from{
+    transform: translateX(-150px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
 
 /* Transición suave al hacer hover / active */
 button {
