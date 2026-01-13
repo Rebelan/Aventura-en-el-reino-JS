@@ -11,13 +11,6 @@
 </head>
 
 <body>
-<div id="monedas">
-
-                <img src="./style/imgs/moneda.png" id="moneda1" alt="">
-                <img src="./style/imgs/moneda.png" id="moneda2" alt="">
-                <img src="./style/imgs/moneda.png" id="moneda3" alt="">
-            
-            </div>
 
     <div id="escena1" class="escena">
         <div id="tarjeta-jugador" class="tarjeta">
@@ -180,6 +173,22 @@
                 </tbody>
             </table>
         </div>
+
+        <button id="volverResultado">Continuar</button>
+
+    </div>
+
+    <div id="escena8" class="escena oculta">
+        <h1>¡Has completado el juego!</h1>
+
+        <div class="final-jugador">
+            <img id="finalAvatarJugador" src="" alt="Jugador">
+            <h2 id="finalNombreJugador"></h2>
+            <p><strong>Puntos Totales:</strong> <span id="finalPuntos"></span></p>
+            <p><strong>Rango:</strong> <span id="finalRango"></span></p>
+        </div>
+
+        <p class="mensaje-final">Gracias por jugar</p>
 
         <button id="reiniciarPartida">Reiniciar partida</button>
 

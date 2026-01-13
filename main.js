@@ -10,6 +10,7 @@ import {
     prepararEscena4,
     prepararEscena5,
     prepararEscena6,
+    prepararEscena8,
     actualizarStatsJugador,
     enemigoActual,
     resultadoFinalBatalla
@@ -88,6 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         prepararEscena4();
         mostrarEscena("escena4");
+    });
+
+    // Botón continuar desde ranking a tarjeta final
+    document.getElementById("volverResultado").addEventListener("click", () => {
+        prepararEscena8();
+        mostrarEscena("escena8");
     });
 
     // Reinicio del juego

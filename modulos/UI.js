@@ -161,6 +161,11 @@ export function prepararTienda() {
                 fillInventario();
 
                 card.classList.add("seleccionado");
+                // Añadir animación de compra
+                card.style.animation = "none";
+                setTimeout(() => {
+                    card.style.animation = "compraExitosa 0.6s ease-out";
+                }, 10);
                 btn.textContent = "Devolver";
 
             } else {
@@ -273,8 +278,23 @@ export function prepararEscena5() {
     const resultado = resultadoFinalBatalla;
     const enemigo = enemigoActual;
 
-    document.getElementById("avatarJugadorResultado").src = jugadorRef.avatar;
-    document.getElementById("avatarEnemigoResultado").src = enemigo.avatar;
+    const avatarJugador = document.getElementById("avatarJugadorResultado");
+    const avatarEnemigo = document.getElementById("avatarEnemigoResultado");
+    
+    // Reiniciar animaciones
+    avatarJugador.style.animation = "none";
+    avatarEnemigo.style.animation = "none";
+    
+    // Forzar reflow para reiniciar la animación
+    void avatarJugador.offsetHeight;
+    void avatarEnemigo.offsetHeight;
+    
+    avatarJugador.src = jugadorRef.avatar;
+    avatarEnemigo.src = enemigo.avatar;
+    
+    // Aplicar animaciones
+    avatarJugador.style.animation = "jugadorEntrada 0.8s ease-out";
+    avatarEnemigo.style.animation = "enemigoEntrada 0.8s ease-out";
 
     const msg = document.getElementById("mensajeResultado");
     const pts = document.getElementById("puntosGanados");
@@ -308,6 +328,21 @@ export function prepararEscena5() {
 export function prepararEscena6() {
     // Guardar el jugador en LocalStorage
     GuardarJugador(jugadorRef);
+}
+
+
+// --------------------- ESCENA 8 - TARJETA FINAL ---------------------
+/**
+ * Prepara la escena 8 (tarjeta final).
+ * Muestra el avatar, nombre, puntos totales y rango del jugador.
+ */
+export function prepararEscena8() {
+    document.getElementById("finalAvatarJugador").src = jugadorRef.avatar;
+    document.getElementById("finalNombreJugador").textContent = jugadorRef.nombre;
+    document.getElementById("finalPuntos").textContent = jugadorRef.puntos;
+
+    const rango = DistinguirJugador(jugadorRef.puntos);
+    document.getElementById("finalRango").textContent = rango;
 }
 
 
