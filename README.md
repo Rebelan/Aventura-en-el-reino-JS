@@ -16,7 +16,3 @@ Juego de aventura estilo RPG desarrollado en JavaScript puro.
 - Sistema de puntos y ranking
 - Enemigos progresivos y jefe final
 - Interfaz responsive
-
-## 📚 Documentación del Código
-
-Esta documentación fue generada automáticamente a partir del JSDoc del código fuente.
