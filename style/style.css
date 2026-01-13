@@ -30,13 +30,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 20px;
+    margin: 20px 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
+    max-height: 350px;
 }
 
-.contenedor-tabla h2 {
-    margin-bottom: 20px;
+.contenedor-tabla h1 {
+    margin-bottom: 15px;
     color: var(--color-text-primary);
 }
 
@@ -48,33 +49,50 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: block;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .tabla-ranking thead {
+    display: table;
+    width: 100%;
     background-color: var(--color-accent-success);
     color: #F5F1E6;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tabla-ranking tbody {
+    display: table;
+    width: 100%;
 }
 
 .tabla-ranking th {
-    padding: 15px;
+    padding: 12px;
     text-align: center;
     font-weight: bold;
     border-bottom: 2px solid var(--color-accent-gold);
 }
 
 .tabla-ranking td {
-    padding: 12px 15px;
+    padding: 10px 12px;
     text-align: center;
     border-bottom: 1px solid var(--color-border-subtle);
     color: var(--color-text-primary);
 }
 
-.tabla-ranking tbody tr:hover {
+.tabla-ranking tbody tr:nth-child(odd) {
+    background-color: var(--color-surface-card);
+}
+
+.tabla-ranking tbody tr:nth-child(even) {
     background-color: var(--color-surface-panel);
 }
 
-.tabla-ranking tbody tr:last-child td {
-    border-bottom: none;
+.tabla-ranking tbody tr:hover {
+    background-color: var(--color-border-subtle);
 }
 
 /* Monedero fijo en esquina inferior izquierda */
@@ -105,6 +123,9 @@
 
 body{
     background: var(--color-bg-main);
+    background-image: url('./imgs/patronFondo.png');
+    background-repeat: repeat;
+    background-size: 16px 16px;
     color: var(--color-text-primary);
     overflow: hidden;
     height: 100vh;
@@ -137,9 +158,9 @@ button:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 20px;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 15px 20px;
     width: 100%;
 }
     .escena h1{
@@ -156,8 +177,8 @@ button:hover{
 .tarjeta{
     background: #4a4a4a;
     border: 2px solid var(--color-border-subtle);
-    padding: 20px;
-    width: 260px;
+    padding: 12px;
+    width: 180px;
     text-align: center;
     margin: auto;
     border-radius: 12px;
@@ -170,21 +191,23 @@ button:hover{
 }
 
 .tarjeta img{
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .tarjeta h2{
     font-family: var(--font-heading);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
 }
 
 .tarjeta p{
     font-family: var(--font-body);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--color-text-secondary);
+    font-size: 0.85rem;
 }
 
 .tarjeta span{
@@ -193,13 +216,19 @@ button:hover{
 }
 
 .inventario {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+.inventario h3 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
 }
 
 .gridInventario {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 10px;
@@ -207,15 +236,19 @@ button:hover{
 
 .casillaInv {
     background: var(--color-surface-panel);
-    border: 2px solid var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
     text-align: center;
-    padding: 6px;
+    padding: 4px;
     border-radius: 6px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .casillaInv img {
-    width: 50px;
-    height: 50px;
+    width: 38px;
+    height: 38px;
     object-fit: contain;
 }
 
@@ -223,10 +256,10 @@ button:hover{
 
 .gridProductos, .gridCesta{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin: 20px;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 8px;
+    max-width: 700px;
     padding: 0 10px;
 }
 
@@ -234,13 +267,14 @@ button:hover{
     background: #4a4a4a;
     border: 2px solid var(--color-border-subtle);
     text-align: center;
-    padding: 15px;
+    padding: 8px;
     border-radius: 10px;
+    font-size: 0.85rem;
 }
 
 .producto img{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 

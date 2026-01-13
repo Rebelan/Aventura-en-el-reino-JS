@@ -1,5 +1,6 @@
 // Aqui se hace el flujo principal del jueguito las funciones estan en UI.js
 import Jugador from "./clases/Jugador.js";
+import Producto from "./clases/Producto.js";
 import {
     setJugador,
     mostrarEscena,
@@ -17,11 +18,21 @@ import Jefe from "./clases/Jefe.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Crear arma inicial para garantizar ataque mínimo
+    const armaInicial = new Producto(
+        "Espada Básica",
+        "./style/imgs/espada_corta.png",
+        0,
+        "comun",
+        "arma",
+        15
+    );
+
     const jugador = new Jugador(
         "Jugador",
         "./style/imgs/avatar.png",
         0,
-        [],
+        [armaInicial],
         100,
         500  // Dinero inicial
     );
