@@ -22,10 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "./style/imgs/avatar.png",
         0,
         [],
-        100
+        100,
+        500  // Dinero inicial
     );
 
     setJugador(jugador);
+    
+    // Actualizar el display del dinero
+    document.getElementById("dineroDisplay").textContent = jugador.dinero;
 
     // Escena 1 visible al inicio
     mostrarEscena("escena1");
@@ -66,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (resultado.ganador === "jugador" && enemigo instanceof Jefe) {
             prepararEscena6();
-            mostrarEscena("escena6");
+            mostrarEscena("escena7");
             confeti();
             return;
         }

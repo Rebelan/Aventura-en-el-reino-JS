@@ -17,20 +17,41 @@
   animation: escenaFadeIn 0.5s ease-out;
 }
 
-#monedas{
-  overflow-y: hidden;
-  animation: monedas 2s ease-in-out infinite;
+/* Animación de monedas cayendo y girando */
+@keyframes monedaCaida {
+  0% {
+    opacity: 1;
+    transform: translateY(-100px) rotateY(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(200px) rotateY(1800deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(400px) rotateY(3600deg);
+  }
 }
 
-@keyframes monedas {
-  from{
-    opacity: 1;
-    transform: translateY(-300px);
-  }
-  to{
+.moneda-animada {
+  position: fixed;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  z-index: 50;
+  animation: monedaCaida 2.5s ease-in forwards;
+}
+
+/* Animación del monedero deslizándose desde la izquierda */
+@keyframes monederoAnimacion {
+  from {
+    transform: translateX(-150px);
     opacity: 0;
-    transform: translateY(400px);
-    z-index: 1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 

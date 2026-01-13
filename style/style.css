@@ -25,55 +25,89 @@
     color: #F5F1E6;
 }
 
+/* Estilos para la tabla de ranking */
+.contenedor-tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 20px;
+    width: 100%;
+    max-width: 600px;
+}
 
-#monedas img{
+.contenedor-tabla h2 {
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+}
+
+.tabla-ranking {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface-card);
+    border: 2px solid var(--color-border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tabla-ranking thead {
+    background-color: var(--color-accent-success);
+    color: #F5F1E6;
+}
+
+.tabla-ranking th {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-accent-gold);
+}
+
+.tabla-ranking td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border-subtle);
+    color: var(--color-text-primary);
+}
+
+.tabla-ranking tbody tr:hover {
+    background-color: var(--color-surface-panel);
+}
+
+.tabla-ranking tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Monedero fijo en esquina inferior izquierda */
+.monedero-container {
+    position: fixed;
+    bottom: 1%;
+    left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: monederoAnimacion 1s ease forwards;
+}
+
+.monedero-imagen {
     width: 100px;
     height: 100px;
+    object-fit: contain;
 }
 
-#moneda1{
-    margin-right: 35%;
-}
-
-#moneda2{
-    margin-right: 20%;
-}
-
-#moneda3{
-    margin-right: 15%;
-}
-
-#bolsa img{
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1%;
-    margin-left: 2%;
-}
-#bolsa{
-    position: relative;
-}
-
-table{
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: gray;
-    color: purple;
-   
-}
-
-th{
-    border: 3px solid rgb(255, 255, 0);
-    border-radius: 5px;
-}
-
-td{
-    color: aqua;
-    border: 2px solid black;
+.dinero-cantidad {
+    position: absolute;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: var(--font-heading);
 }
 
 body{
     background: var(--color-bg-main);
     color: var(--color-text-primary);
+    overflow: hidden;
+    height: 100vh;
 }
 
 h1, h2, h3{
@@ -120,7 +154,7 @@ button:hover{
 }
 
 .tarjeta{
-    background: var(--color-surface-card);
+    background: #4a4a4a;
     border: 2px solid var(--color-border-subtle);
     padding: 20px;
     width: 260px;
@@ -197,7 +231,7 @@ button:hover{
 }
 
 .producto{
-    background: var(--color-surface-panel);
+    background: #4a4a4a;
     border: 2px solid var(--color-border-subtle);
     text-align: center;
     padding: 15px;
@@ -261,7 +295,7 @@ button:hover{
 }
 
 .tarjeta-enemigo {
-    background: var(--color-surface-panel);
+    background: #4a4a4a;
     border: 2px solid var(--color-border-subtle);
     text-align: center;
     padding: 20px;

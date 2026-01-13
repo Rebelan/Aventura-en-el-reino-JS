@@ -5,7 +5,7 @@ import { productos, AplicarElDescuento } from "./Mercado.js";
 import { enemigos, jefeFinal } from "./Enemigos.js";
 import { combate } from "./Batalla.js";
 import Jefe from "../clases/Jefe.js";
-import { DistinguirJugador } from "./Ranking.js";
+import { DistinguirJugador, GuardarJugador, RenderizarTabla } from "./Ranking.js";
 
 
 // --------------------- VARIABLES GLOBALES ---------------------
@@ -85,6 +85,30 @@ export function actualizarStatsJugador() {
     document.getElementById("atkJugador3").textContent = jugadorRef.obtenerAtaqueTotal();
     document.getElementById("defJugador3").textContent = jugadorRef.obtenerDefensaTotal();
     document.getElementById("puntosJugador3").textContent = jugadorRef.puntos;
+}
+
+
+// --------------------- ANIMACIÓN MONEDAS ---------------------
+/**
+ * Muestra una animación de tres monedas cayendo desde arriba
+ * Posicionadas en 25%, 50% y 75% del ancho de pantalla
+ */
+export function animarMonedas() {
+    const posiciones = ['25%', '50%', '75%'];
+    
+    posiciones.forEach((posicion, index) => {
+        const moneda = document.createElement('img');
+        moneda.src = './style/imgs/moneda.png';
+        moneda.classList.add('moneda-animada');
+        moneda.style.left = posicion;
+        
+        document.body.insertAdjacentElement('beforeend', moneda);
+        
+        // Eliminar la moneda después de la animación
+        setTimeout(() => {
+            moneda.remove();
+        }, 2500);
+    });
 }
 
 
@@ -267,6 +291,9 @@ export function prepararEscena5() {
 
     pts.textContent = `Puntos ganados: ${resultado.puntosGanados}`;
     jugadorRef.puntos += resultado.puntosGanados;
+    
+    // Animar monedas al ganar
+    animarMonedas();
 
     const idx = enemigos.indexOf(enemigo);
     if (idx !== -1) enemigos.splice(idx, 1);
@@ -275,19 +302,12 @@ export function prepararEscena5() {
 
 // --------------------- ESCENA 6 - FINAL DEL JUEGO ---------------------
 /**
- * Prepara la escena 6 (pantalla final).
- * Muestra el rango final del jugador según sus puntos.
- * Muestra estadísticas finales y mensaje de conclusión.
+ * Prepara la escena 7 (pantalla final con ranking).
+ * Guarda el jugador en LocalStorage.
  */
 export function prepararEscena6() {
-
-    document.getElementById("finalAvatarJugador").src = jugadorRef.avatar;
-    document.getElementById("finalNombreJugador").textContent = jugadorRef.nombre;
-    document.getElementById("finalPuntos").textContent = jugadorRef.puntos;
-
-    const rango = DistinguirJugador(jugadorRef.puntos);
-
-    document.getElementById("finalRango").textContent = rango;
+    // Guardar el jugador en LocalStorage
+    GuardarJugador(jugadorRef);
 }
 
 

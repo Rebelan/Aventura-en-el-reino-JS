@@ -11,17 +11,19 @@ export default class Jugador {
      * @param {number} puntos - Puntos iniciales del jugador
      * @param {Array} inventario - Array inicial de objetos en el inventario
      * @param {number} vida - Vida máxima y actual del jugador
+     * @param {number} dinero - Dinero inicial del jugador (default: 0)
      * 
      * @example
-     * const jugador = new Jugador("Héroe", "./avatar.png", 0, [], 100);
+     * const jugador = new Jugador("Héroe", "./avatar.png", 0, [], 100, 0);
      */
-    constructor(nombre, avatar, puntos, inventario, vida) {
+    constructor(nombre, avatar, puntos, inventario, vida, dinero = 0) {
         this.nombre = nombre;
         this.avatar = avatar;
         this.puntos = puntos;
         this.inventario = inventario;
         this.vida = vida;
         this.maxVida = vida;
+        this.dinero = dinero;
     }
 
     /**

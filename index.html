@@ -115,46 +115,54 @@
 
 
     <div id="escena7" class="escena oculta">
-        <h1>¡Has completado el juego!</h1>
+        <h1>Ranking Final</h1>
 
-        <div class="final-jugador">
-            <img id="finalAvatarJugador" src="" alt="Jugador">
-            <h2 id="finalNombreJugador"></h2>
-            <p><strong>Puntos Totales:</strong> <span id="finalPuntos"></span></p>
-            <p><strong>Rango:</strong> <span id="finalRango"></span></p>
+        <div class="contenedor-tabla">
+            <table class="tabla-ranking">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Puntos</th>
+                        <th>Dinero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jugador</td>
+                        <td>1500</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>Abel</td>
+                        <td>1200</td>
+                        <td>450</td>
+                    </tr>
+                    <tr>
+                        <td>Julian</td>
+                        <td>800</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>950</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <p class="mensaje-final">Gracias por jugar</p>
 
         <button id="reiniciarPartida">Reiniciar partida</button>
 
     </div>
 
     <div id="escena6" class="escena oculta">
-
-        <table>
-            <tr id="cabeza">
-                <th>Nombre</th>
-                <th>Puntos</th>
-                <th>Dinero</th>
-            </tr>
-            <tr>
-                <td>Abel</td>
-                <td>1500</td>
-                <td>255</td>
-            </tr>
-            <tr>
-                <td>Julian</td>
-                <td>250</td>
-                <td>0</td>
-            </tr>
-        </table>
-        <button id="reiniciarPartida">Reiniciar partida</button>
+        <h1>Ronda Completada</h1>
+        <p>Siguiente batalla...</p>
     </div>
-<div id="bolsa">
-            500
-            <img src="./style/imgs/monedero.png" alt="bolsa de monedas">
-        </div>
+<div id="bolsa" class="monedero-container">
+    <img src="./style/imgs/monedero.png" alt="bolsa de monedas" class="monedero-imagen">
+    <span id="dineroDisplay" class="dinero-cantidad">0</span>
+</div>
     <script type="module" src="main.js"></script>
 </body>
 
