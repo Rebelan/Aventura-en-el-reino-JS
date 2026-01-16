@@ -233,3 +233,20 @@ button:active {
 .mensaje-resultado {
   animation: mensajeEntrada 0.4s ease-out;
 }
+
+#contenedor-estrellas{
+  display: flex;
+  margin-left: 90%;
+}
+.estrellitas{
+  
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation-delay:0.8s;
+  animation: estrellas 10s ease-in infinite;
+}
+
+@keyframes estrellas{
+  0% , 100%{
+    transform: rotateX(500px)
+  }
+}

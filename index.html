@@ -13,6 +13,24 @@
 <body>
 
     <div id="escena1" class="escena">
+        <div id="contenedor-estrellas">
+            <div class="estrellitas">
+                ⭐
+            </div>
+            <div class="estrellitas">
+                ⭐
+            </div>
+            <div class="estrellitas">
+                ⭐
+            </div>
+            <div class="estrellitas">
+                ⭐
+            </div>
+            <div class="estrellitas">
+                ⭐
+            </div>
+        </div>
+
         <div id="tarjeta-jugador" class="tarjeta">
             <img id="avatarJugador" src="./style/imgs/avatar.png" alt="Imagen correspondiente al jugador">
 
@@ -23,15 +41,20 @@
             <p><strong>Defensa:</strong> <span id="defJugador">0</span></p>
             <p><strong>Puntos:</strong> <span id="puntosJugador">0</span></p>
 
-            
+
 
         </div>
 
         <button id="btnMercado">Entrar a la Tienda</button>
 
+
         <div class="inventario">
             <h3>Inventario</h3>
             <div id="inventarioCasillas" class="gridInventario"></div>
+        </div>
+        <div id="panelOculto">
+            <h3>TOP SECRET</h3>
+            <p>comprar un arma hace que ganes la partida en el 100% de las veces</p>
         </div>
     </div>
 
@@ -55,7 +78,7 @@
                 <!-- Aqui se añadiran los objetos mediante una funcion -->
             </div>
         </div>
-        
+
     </div>
 
 
@@ -198,10 +221,10 @@
         <h1>Ronda Completada</h1>
         <p>Siguiente batalla...</p>
     </div>
-<div id="bolsa" class="monedero-container">
-    <img src="./style/imgs/monedero.png" alt="bolsa de monedas" class="monedero-imagen">
-    <span id="dineroDisplay" class="dinero-cantidad">0</span>
-</div>
+    <div id="bolsa" class="monedero-container">
+        <img src="./style/imgs/monedero.png" alt="bolsa de monedas" class="monedero-imagen">
+        <span id="dineroDisplay" class="dinero-cantidad">0</span>
+    </div>
     <script type="module" src="main.js"></script>
 </body>
 

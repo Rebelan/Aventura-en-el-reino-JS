@@ -20,6 +20,26 @@
   --font-body: "Merriweather Sans", system-ui, sans-serif;
 }
 
+
+
+#panelOculto{
+    width: 110px;
+    background-color: var(--color-surface-card);
+    border: 2px solid var(--color-border-subtle);
+    border-radius: 0 0 12px 12px;
+    position: fixed;
+    margin-right: 20px;
+    right: 0;
+    bottom: -120px;
+    padding: 10px;
+    transition: bottom 0.3s ease;
+    z-index: 1000;
+}
+
+#panelOculto:hover{
+    bottom: 0;
+}
+
 #cabeza{
     background-color: #3BA55D;
     color: #F5F1E6;
